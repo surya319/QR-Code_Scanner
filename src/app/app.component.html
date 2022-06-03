@@ -1,0 +1,12 @@
+<zxing-scanner [formats]="allowedFormats" (scanSuccess)="onCodeResult($event)"></zxing-scanner>
+
+<section class="results" *ngIf="qrResultString">
+  <div>
+    <small>Result</small>
+    <!-- <strong>{{ qrResultString }}</strong> -->
+    <code>
+        <pre>{{qrResultString |json}}</pre>
+    </code>
+  </div>
+  <button mat-icon-button (click)="clearResult()">clear</button>
+</section>
